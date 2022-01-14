@@ -25,7 +25,7 @@ app.use(logger("dev"));
 //SEARCH ENGINE API
   router.get("/search", (req, res) => {
     console.log(req.headers)
-    TestData.find({ Title: req.headers.title }, (err, data) => {
+    TestData.find({ Title: new RegExp(req.headers.title, 'i')  }, (err, data) => {
       if (err) return res.json({ success: false, error: err });
       return res.json({ success: true, data: data }); 
     })
