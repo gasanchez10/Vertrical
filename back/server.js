@@ -3,9 +3,10 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
-const API_PORT = 3001;
+const API_PORT = 4000;
 const app = express();
 const TestData = require("./data.js");
+
 
 // CONNECTION TO DB
 app.use(cors());
